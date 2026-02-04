@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: linear-gradient(to bottom, #000000, #0A3D2A);
+  color: white;
+}
+
+.glass-card {
+  @apply bg-black/30 backdrop-blur-md border border-[#39FF14]/20 rounded-lg shadow-lg hover:shadow-[0_0_15px_rgba(57,255,20,0.5)] transition-all duration-300;
+}
