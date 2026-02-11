@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useState, useMemo, useEffect } from 'react';
+=======
+import React, { useState, useMemo } from 'react';
+>>>>>>> 0436bc1ec5156746900fe85b6afdfa71232faf2d
 import { Link } from 'react-scroll';
 import { motion } from 'framer-motion';
 import CardPartido from './components/CardPartido';
@@ -16,7 +20,12 @@ import {
   tablaPegeche,
   grupoA,
   grupoB,
+<<<<<<< HEAD
   plantelJugadores as initialPlantelJugadores,
+=======
+  plantelJugadores,
+  statsTotales,
+>>>>>>> 0436bc1ec5156746900fe85b6afdfa71232faf2d
   noticias,
 } from './data/mamasData';
 
@@ -34,7 +43,11 @@ interface Noticia {
 }
 
 function App() {
+<<<<<<< HEAD
   // Estados principales
+=======
+  // Estados
+>>>>>>> 0436bc1ec5156746900fe85b6afdfa71232faf2d
   const [activeTab, setActiveTab] = useState('COPA JRS');
   const [showAll, setShowAll] = useState(false);
   const [filtroJugadores, setFiltroJugadores] = useState('TODOS');
@@ -42,6 +55,7 @@ function App() {
   const [noticiaSeleccionada, setNoticiaSeleccionada] = useState<Noticia | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [showAllJugadores, setShowAllJugadores] = useState(false);
+<<<<<<< HEAD
   const [showAdmin, setShowAdmin] = useState(false); // toggle para mostrar botones de edición
 
   // Estado editable de jugadores (inicia con los valores originales)
@@ -122,6 +136,33 @@ function App() {
           />
         </div>
 
+=======
+
+  // Filtro de jugadores
+  const jugadoresFiltrados = useMemo(() => {
+    if (filtroJugadores === 'ACTIVOS') {
+      return plantelJugadores.filter((j) => j.activo);
+    }
+    if (filtroJugadores === 'LEYENDAS') {
+      return plantelJugadores.filter((j) => j.esLeyenda);
+    }
+    return plantelJugadores;
+  }, [filtroJugadores]);
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-[#0a1f0a] via-black to-black text-white overflow-x-hidden font-sans">
+      {/* Navbar */}
+      <nav className="fixed top-0 left-0 w-full bg-black/80 backdrop-blur-md z-50 py-4 px-6 md:px-12 flex justify-between items-center border-b border-green-900/30">
+        <div className="flex items-center">
+          <img
+            src="/images/jugadores/escudos/White_Black_Gold_Circle_Modern_Football_Club_Logo-removebg-preview.png"
+            alt="Mamas FC Logo"
+            className="h-10 md:h-12 w-auto object-contain drop-shadow-lg transition-transform hover:scale-110"
+          />
+        </div>
+
+        {/* Links desktop */}
+>>>>>>> 0436bc1ec5156746900fe85b6afdfa71232faf2d
         <ul className="hidden md:flex space-x-8 md:space-x-12 text-base font-medium uppercase tracking-wider">
           {['inicio', 'partidos', 'tabla', 'noticias', 'plantel'].map((section) => (
             <li key={section}>
@@ -130,8 +171,13 @@ function App() {
                 smooth={true}
                 duration={800}
                 spy={true}
+<<<<<<< HEAD
                 activeClass={`!font-bold ${isScrolled ? 'text-black border-black' : 'text-green-400 border-green-400'} border-b-2 pb-1`}
                 className={`cursor-pointer hover:${isScrolled ? 'text-black' : 'text-green-400'} transition-colors duration-300`}
+=======
+                activeClass="!text-green-400 border-b-2 border-green-400 pb-1"
+                className="cursor-pointer hover:text-green-400 transition-colors duration-300"
+>>>>>>> 0436bc1ec5156746900fe85b6afdfa71232faf2d
               >
                 {section.charAt(0).toUpperCase() + section.slice(1)}
               </Link>
@@ -139,12 +185,20 @@ function App() {
           ))}
         </ul>
 
+<<<<<<< HEAD
         <div className="md:hidden">
           <button 
             onClick={() => setMenuOpen(!menuOpen)} 
             className={`text-4xl focus:outline-none p-2 transition-colors duration-300 ${
               isScrolled ? 'text-black' : 'text-white'
             }`}
+=======
+        {/* Hamburguesa móvil */}
+        <div className="md:hidden">
+          <button 
+            onClick={() => setMenuOpen(!menuOpen)} 
+            className="text-white text-4xl focus:outline-none p-2"
+>>>>>>> 0436bc1ec5156746900fe85b6afdfa71232faf2d
           >
             {menuOpen ? '×' : '≡'}
           </button>
@@ -152,11 +206,15 @@ function App() {
             <motion.ul
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
+<<<<<<< HEAD
               className={`absolute top-full left-0 w-full p-8 flex flex-col gap-8 text-center border-t transition-all duration-500 ${
                 isScrolled 
                   ? 'bg-white/95 text-black border-gray-200 shadow-lg' 
                   : 'bg-black/95 text-white border-green-900/30'
               }`}
+=======
+              className="absolute top-full left-0 w-full bg-black/95 backdrop-blur-md p-8 flex flex-col gap-8 text-center border-t border-green-900/30"
+>>>>>>> 0436bc1ec5156746900fe85b6afdfa71232faf2d
             >
               {['inicio', 'partidos', 'tabla', 'noticias', 'plantel'].map((section) => (
                 <li key={section}>
@@ -166,7 +224,11 @@ function App() {
                     duration={800}
                     spy={true}
                     onClick={() => setMenuOpen(false)}
+<<<<<<< HEAD
                     className={`text-2xl font-medium uppercase hover:${isScrolled ? 'text-black' : 'text-green-400'} transition-colors`}
+=======
+                    className="text-2xl font-medium uppercase hover:text-green-400 transition-colors"
+>>>>>>> 0436bc1ec5156746900fe85b6afdfa71232faf2d
                   >
                     {section.charAt(0).toUpperCase() + section.slice(1)}
                   </Link>
@@ -276,6 +338,7 @@ function App() {
           {activeTab === 'COPA JRS' ? (
             <BracketCopa />
           ) : activeTab === 'TORNEO JRS' ? (
+<<<<<<< HEAD
             <div className="space-y-16">
               <TablaLiga titulo="Grupo A" equipos={grupoA} tipoLiga="jrs" />
               <TablaLiga titulo="Grupo B" equipos={grupoB} tipoLiga="jrs" />
@@ -284,11 +347,22 @@ function App() {
             <TablaLiga titulo="Tabla JRS" equipos={tablaJRS} tipoLiga="jrs" />
           ) : activeTab === 'TABLA PEGECHE' ? (
             <TablaLiga titulo="Tabla Pegeche" equipos={tablaPegeche} tipoLiga="pegeche" />
+=======
+            <div>
+              <TablaLiga titulo="Grupo A" equipos={grupoA} />
+              <TablaLiga titulo="Grupo B" equipos={grupoB} />
+            </div>
+          ) : activeTab === 'TABLA JRS' ? (
+            <TablaLiga titulo="Tabla JRS" equipos={tablaJRS} />
+          ) : activeTab === 'TABLA PEGECHE' ? (
+            <TablaLiga titulo="Tabla Pegeche" equipos={tablaPegeche} />
+>>>>>>> 0436bc1ec5156746900fe85b6afdfa71232faf2d
           ) : null}
         </div>
       </section>
 
       {/* Noticias */}
+<<<<<<< HEAD
       <section id="noticias" className="py-24 px-6 md:px-12 bg-black/50">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-6xl md:text-7xl font-black text-center mb-6 tracking-tighter text-white drop-shadow-lg">
@@ -371,6 +445,90 @@ function App() {
         />
       </section>
 
+=======
+<section id="noticias" className="py-24 px-6 md:px-12 bg-black/50">
+  <div className="max-w-7xl mx-auto">
+    <h2 className="text-6xl md:text-7xl font-black text-center mb-6 tracking-tighter text-white drop-shadow-lg">
+      NOTICIAS
+    </h2>
+    <p className="text-center text-gray-400 text-xl mb-16">
+      Mantente al día con todo lo que pasa en el club
+    </p>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+      {/* Destacada grande - ocupa 2 columnas en PC grande, 1 en móvil */}
+      {noticias.filter(n => n.tipo === 'destacada').map((noticia) => (
+        <div
+          key={noticia.id}
+          className="md:col-span-2 lg:col-span-2 glass-card rounded-2xl overflow-hidden border border-green-800/40 hover:border-green-600/60 transition-all cursor-pointer group"
+          onClick={() => { setNoticiaSeleccionada(noticia); setModalOpen(true); }}
+        >
+          {noticia.media && (
+            <div className="h-64 sm:h-80 md:h-[400px] lg:h-[500px] overflow-hidden">
+              <img
+                src={noticia.media}
+                alt={noticia.titulo}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+          )}
+          <div className="p-6 md:p-8 lg:p-10">
+            <div className="flex items-center gap-3 mb-4 flex-wrap">
+              <span className="bg-green-600 text-white px-4 py-1 rounded-full text-sm font-bold">
+                {noticia.categoria}
+              </span>
+              <span className="text-gray-400 text-sm">{noticia.tiempo}</span>
+            </div>
+            <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4 group-hover:text-green-300 transition-colors">
+              {noticia.titulo}
+            </h3>
+            <p className="text-gray-300 text-base md:text-lg lg:text-xl mb-6">
+              {noticia.resumen || noticia.contenido.substring(0, 200) + '...'}
+            </p>
+            <span className="text-green-400 font-bold flex items-center gap-2 group-hover:gap-4 transition-all text-base md:text-lg">
+              Leer más →
+            </span>
+          </div>
+        </div>
+      ))}
+
+      {/* Pequeñas - 1 columna en móvil, 2 en tablet, 1 en PC grande (para balance) */}
+      <div className="space-y-6 flex flex-col">
+        {noticias.filter(n => n.tipo !== 'destacada').map((noticia) => (
+          <div
+            key={noticia.id}
+            className="glass-card rounded-xl p-6 border border-green-800/40 hover:border-green-600/60 transition-all cursor-pointer group"
+            onClick={() => { setNoticiaSeleccionada(noticia); setModalOpen(true); }}
+          >
+            <div className="flex items-center gap-3 mb-3 flex-wrap">
+              <span className="bg-green-900/50 text-green-300 px-3 py-1 rounded-full text-xs font-bold">
+                {noticia.categoria}
+              </span>
+              <span className="text-gray-500 text-xs">{noticia.tiempo}</span>
+            </div>
+            <h4 className="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-green-300 transition-colors">
+              {noticia.titulo}
+            </h4>
+            <p className="text-gray-400 text-sm md:text-base mb-4">
+              {noticia.resumen || noticia.contenido.substring(0, 100) + '...'}
+            </p>
+            <span className="text-green-400 text-sm md:text-base font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
+              Leer más →
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <ModalNoticia
+    noticia={noticiaSeleccionada}
+    isOpen={modalOpen}
+    onClose={() => setModalOpen(false)}
+  />
+</section>
+>>>>>>> 0436bc1ec5156746900fe85b6afdfa71232faf2d
       {/* Plantel */}
       <section id="plantel" className="py-24 px-6 md:px-12 bg-black/50">
         <div className="max-w-7xl mx-auto">
@@ -381,6 +539,7 @@ function App() {
             Conocé a todos los jugadores que pasaron por Mamas FC
           </p>
 
+<<<<<<< HEAD
           {/* Toggle Modo edición */}
           <div className="text-center mb-12">
             <button
@@ -412,6 +571,8 @@ function App() {
           </div>
 
           {/* Filtros */}
+=======
+>>>>>>> 0436bc1ec5156746900fe85b6afdfa71232faf2d
           <div className="flex justify-center gap-4 mb-12 flex-wrap">
             {['TODOS', 'ACTIVOS', 'LEYENDAS'].map((filtro) => (
               <button
@@ -428,6 +589,7 @@ function App() {
             ))}
           </div>
 
+<<<<<<< HEAD
           {/* Grid de jugadores */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {jugadoresFiltrados.slice(0, showAllJugadores ? jugadoresFiltrados.length : 4).map((jugador) => (
@@ -470,6 +632,33 @@ function App() {
           </div>
 
           {/* Botón Ver todos / Ver menos */}
+=======
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+            <div className="bg-gradient-to-br from-green-900/40 to-black p-6 rounded-xl text-center border border-green-800/50">
+              <div className="text-4xl font-black text-green-400">{statsTotales.activos}</div>
+              <div className="text-sm text-gray-400 mt-1">Jugadores Activos</div>
+            </div>
+            <div className="bg-gradient-to-br from-yellow-900/30 to-black p-6 rounded-xl text-center border border-yellow-700/40">
+              <div className="text-4xl font-black text-yellow-400">{statsTotales.leyendas}</div>
+              <div className="text-sm text-gray-400 mt-1">Leyendas</div>
+            </div>
+            <div className="bg-gradient-to-br from-green-900/40 to-black p-6 rounded-xl text-center border border-green-800/50">
+              <div className="text-4xl font-black text-green-400">{statsTotales.golesTotales}</div>
+              <div className="text-sm text-gray-400 mt-1">Goles Totales</div>
+            </div>
+            <div className="bg-gradient-to-br from-green-900/40 to-black p-6 rounded-xl text-center border border-green-800/50">
+              <div className="text-4xl font-black text-green-400">{statsTotales.asistenciasTotales}</div>
+              <div className="text-sm text-gray-400 mt-1">Asistencias Totales</div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {jugadoresFiltrados.slice(0, showAllJugadores ? jugadoresFiltrados.length : 4).map((jugador) => (
+              <CardJugador key={jugador.id} jugador={jugador} />
+            ))}
+          </div>
+
+>>>>>>> 0436bc1ec5156746900fe85b6afdfa71232faf2d
           <div className="text-center mt-12">
             {showAllJugadores ? (
               <button
@@ -487,6 +676,7 @@ function App() {
               </button>
             )}
           </div>
+<<<<<<< HEAD
 
           {/* Botón Exportar JSON */}
           {showAdmin && (
@@ -499,6 +689,8 @@ function App() {
               </button>
             </div>
           )}
+=======
+>>>>>>> 0436bc1ec5156746900fe85b6afdfa71232faf2d
         </div>
       </section>
 

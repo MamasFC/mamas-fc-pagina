@@ -9,6 +9,7 @@ export interface Partido {
 
 export const todosLosPartidos: Partido[] = [
   {
+<<<<<<< HEAD
     rival: "White Panters King",
     fecha: "11 Feb 2026",
     tipo: "Amistoso",
@@ -31,6 +32,30 @@ export const todosLosPartidos: Partido[] = [
     local: false,
     resultado: "0 - 0",
     outcome: "E",
+=======
+    rival: "Furros Snowers",
+    fecha: "04 Feb 2026",
+    tipo: "Amistoso",
+    local: false,
+    resultado: "1 - 3",
+    outcome: "V",
+  },
+  {
+    rival: "Furros Snowers",
+    fecha: "04 Feb 2026",
+    tipo: "Amistoso",
+    local: false,
+    resultado: "1 - 2",
+    outcome: "V",
+  },
+  {
+    rival: "Los Diablos Rojos",
+    fecha: "03 Feb 2026",
+    tipo: "Amistoso",
+    local: false,
+    resultado: "1 - 4",
+    outcome: "V",
+>>>>>>> 0436bc1ec5156746900fe85b6afdfa71232faf2d
   },
   // Agrega más si quieres (para probar "ver todos")
   {
@@ -94,7 +119,10 @@ export interface Equipo {
   gc: number;
   dg: number;
   pts: number;
+<<<<<<< HEAD
   proximoLogo?: string;  // ruta al logo del rival (solo para Mamas FC)
+=======
+>>>>>>> 0436bc1ec5156746900fe85b6afdfa71232faf2d
 }
 
 export const tablaJRS: Equipo[] = [
@@ -111,6 +139,7 @@ export const tablaJRS: Equipo[] = [
 ];
 
 export const tablaPegeche: Equipo[] = [
+<<<<<<< HEAD
   { pos: 1, nombre: 'Backyardigans', pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0,
     proximoLogo: '/images/jugadores/escudos/Monogamia.jpg'
    },
@@ -133,6 +162,19 @@ export const tablaPegeche: Equipo[] = [
      { pos: 6, nombre: 'Furros Snowers', pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0,
     proximoLogo: '/images/jugadores/escudos/White_Black_Gold_Circle_Modern_Football_Club_Logo-removebg-preview.png' },
   
+=======
+  { pos: 1, nombre: '-', pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0 },
+  { pos: 2, nombre: 'Mamas FC', pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0 },
+  // ... agrega los otros 8 equipos con datos inventados o reales cuando los tengas
+  { pos: 3, nombre: '-', pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0 },
+  { pos: 4, nombre: '-', pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0 },
+  { pos: 5, nombre: '-', pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0 },
+  { pos: 6, nombre: '-', pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0 },
+  { pos: 7, nombre: '-', pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0 },
+  { pos: 8, nombre: '-', pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0 },
+  { pos: 9, nombre: '-', pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0 },
+  { pos: 10, nombre: '-', pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0 },
+>>>>>>> 0436bc1ec5156746900fe85b6afdfa71232faf2d
 ];
 
 // Para Torneo JRS (dos grupos)
@@ -154,10 +196,13 @@ export const grupoB: Equipo[] = [
   { pos: 6, nombre: 'Montevideo Wanderers', pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0 },
 ];
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> 0436bc1ec5156746900fe85b6afdfa71232faf2d
 // ... (mantén partidos y tablas anteriores)
 
 export interface Jugador {
