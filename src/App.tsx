@@ -502,7 +502,7 @@ function App() {
         </div>
       </section>
 
-      {/* Testimonios */}
+      {/* Testimonioss */}
       <TestimoniosCarrusel />
     </div>
   );
