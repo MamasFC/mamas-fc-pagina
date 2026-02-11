@@ -9,28 +9,28 @@ export interface Partido {
 
 export const todosLosPartidos: Partido[] = [
   {
-    rival: "Furros Snowers",
-    fecha: "04 Feb 2026",
+    rival: "White Panters King",
+    fecha: "11 Feb 2026",
     tipo: "Amistoso",
     local: false,
-    resultado: "1 - 3",
+    resultado: "1 - 1",
+    outcome: "E",
+  },
+  {
+    rival: "Diblos Rojos",
+    fecha: "11 Feb 2026",
+    tipo: "Amistoso",
+    local: false,
+    resultado: "2 - 3",
     outcome: "V",
   },
   {
-    rival: "Furros Snowers",
-    fecha: "04 Feb 2026",
+    rival: "White Panters King",
+    fecha: "11 Feb 2026",
     tipo: "Amistoso",
     local: false,
-    resultado: "1 - 2",
-    outcome: "V",
-  },
-  {
-    rival: "Los Diablos Rojos",
-    fecha: "03 Feb 2026",
-    tipo: "Amistoso",
-    local: false,
-    resultado: "1 - 4",
-    outcome: "V",
+    resultado: "0 - 0",
+    outcome: "E",
   },
   // Agrega más si quieres (para probar "ver todos")
   {
@@ -94,6 +94,7 @@ export interface Equipo {
   gc: number;
   dg: number;
   pts: number;
+  proximoLogo?: string;  // ruta al logo del rival (solo para Mamas FC)
 }
 
 export const tablaJRS: Equipo[] = [
@@ -110,17 +111,28 @@ export const tablaJRS: Equipo[] = [
 ];
 
 export const tablaPegeche: Equipo[] = [
-  { pos: 1, nombre: '-', pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0 },
-  { pos: 2, nombre: 'Mamas FC', pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0 },
-  // ... agrega los otros 8 equipos con datos inventados o reales cuando los tengas
-  { pos: 3, nombre: '-', pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0 },
-  { pos: 4, nombre: '-', pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0 },
-  { pos: 5, nombre: '-', pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0 },
-  { pos: 6, nombre: '-', pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0 },
-  { pos: 7, nombre: '-', pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0 },
-  { pos: 8, nombre: '-', pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0 },
-  { pos: 9, nombre: '-', pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0 },
-  { pos: 10, nombre: '-', pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0 },
+  { pos: 1, nombre: 'Backyardigans', pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0,
+    proximoLogo: '/images/jugadores/escudos/Monogamia.jpg'
+   },
+  
+  { 
+  pos: 2, 
+  nombre: 'Mamas FC', 
+  pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0,
+  proximoLogo: '/images/jugadores/escudos/FSN.jpg'  // cambia por el logo real del rival
+},
+ 
+{ pos: 3, nombre: 'Diablos Rojos', pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0,
+      proximoLogo: '/images/jugadores/escudos/mch.jpg'},
+  
+      { pos: 4, nombre: 'Monogamia FC', pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0 },
+  
+      { pos: 5, nombre: 'Hawks FC', pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0,  
+     proximoLogo: '/images/jugadores/escudos/LDR.jpg'},
+  
+     { pos: 6, nombre: 'Furros Snowers', pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0,
+    proximoLogo: '/images/jugadores/escudos/White_Black_Gold_Circle_Modern_Football_Club_Logo-removebg-preview.png' },
+  
 ];
 
 // Para Torneo JRS (dos grupos)
@@ -141,6 +153,10 @@ export const grupoB: Equipo[] = [
   { pos: 5, nombre: 'BarceLoan', pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0 },
   { pos: 6, nombre: 'Montevideo Wanderers', pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0 },
 ];
+
+
+
+
 
 // ... (mantén partidos y tablas anteriores)
 
