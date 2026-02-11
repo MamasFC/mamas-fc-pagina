@@ -520,5 +520,5 @@ export const testimonios: Testimonio[] = [
     foto: '/images/carrusel/Ruud.jpg',
     esJugadorMamas: false,
   },
-  // Agrega más cuando quieras (mínimo 4–6 para que rote bien)
+  // Agrega más cuando quieras (mínimo 4–6 para que rote bienn)
 ];
