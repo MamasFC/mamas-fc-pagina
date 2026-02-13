@@ -8,6 +8,23 @@ export interface Partido {
 }
 
 export const todosLosPartidos: Partido[] = [
+  
+   {
+    rival: "White Panters King",
+    fecha: "13 Feb 2026",
+    tipo: "Oficial",
+    local: false,
+    resultado: "0 - 1",
+    outcome: "V",
+  },
+  {
+    rival: "Diblos Rojos",
+    fecha: "11 Feb 2026",
+    tipo: "Amistoso",
+    local: false,
+    resultado: "2 - 3",
+    outcome: "V",
+  },
   {
     rival: "White Panters King",
     fecha: "11 Feb 2026",
@@ -24,14 +41,7 @@ export const todosLosPartidos: Partido[] = [
     resultado: "2 - 3",
     outcome: "V",
   },
-  {
-    rival: "White Panters King",
-    fecha: "11 Feb 2026",
-    tipo: "Amistoso",
-    local: false,
-    resultado: "0 - 0",
-    outcome: "E",
-  },
+  
   // Agrega más si quieres (para probar "ver todos")
   {
     rival: "Pegeche",
@@ -111,16 +121,18 @@ export const tablaJRS: Equipo[] = [
 ];
 
 export const tablaPegeche: Equipo[] = [
-  { pos: 1, nombre: 'Backyardigans', pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0,
-    proximoLogo: '/images/jugadores/escudos/Monogamia.jpg'
-   },
+
   
   { 
-  pos: 2, 
+  pos: 1, 
   nombre: 'Mamas FC', 
-  pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0,
+  pj: 1, g: 1, e: 0, p: 0, gf: 1, gc: 0, dg: 1, pts: 3,
   proximoLogo: '/images/jugadores/escudos/FSN.jpg'  // cambia por el logo real del rival
-},
+ },  
+  
+  { pos: 2, nombre: 'Backyardigans', pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0,
+    proximoLogo: '/images/jugadores/escudos/Monogamia.jpg'
+   },
  
 { pos: 3, nombre: 'Diablos Rojos', pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0,
       proximoLogo: '/images/jugadores/escudos/mch.jpg'},
@@ -130,7 +142,7 @@ export const tablaPegeche: Equipo[] = [
       { pos: 5, nombre: 'Hawks FC', pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0,  
      proximoLogo: '/images/jugadores/escudos/LDR.jpg'},
   
-     { pos: 6, nombre: 'Furros Snowers', pj: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, dg: 0, pts: 0,
+     { pos: 6, nombre: 'White Panters King', pj: 0, g: 0, e: 0, p: 1, gf: 0, gc: 1, dg: -1, pts: 0,
     proximoLogo: '/images/jugadores/escudos/White_Black_Gold_Circle_Modern_Football_Club_Logo-removebg-preview.png' },
   
 ];
